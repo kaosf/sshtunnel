@@ -30,6 +30,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# ref. http://tnakamura.hatenablog.com/entry/2013/04/13/092642
+gem 'rack-contrib', '1.4.0', require: 'rack/contrib'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
