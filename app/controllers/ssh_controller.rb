@@ -9,6 +9,16 @@ class SshController < ApplicationController
   # end
 
   def show
-    render json: {message: 'OK', http: 'GET'}
+    hostname = ENV['SSH_HOSTNAME']
+    username = ENV['SSH_USERNAME']
+    keypath = ENV['SSH_KEYPATH']
+    begin
+      Net::SSH.start(hostname, username, keys: [keypath]) do |ssh|
+        output = ssh.exec! "#{params[:cmd]} #{params[:args]}"
+        render json: {output: output}
+      end
+    rescue
+      render status: 500, json: {message: 'Something went wrong.'}
+    end
   end
 end
