@@ -32,7 +32,12 @@ module Sshtunnel
     # IP address filtering
     # ref. http://tnakamura.hatenablog.com/entry/2013/04/13/092642
     config.middleware.use Rack::Access, {
-      "/ssh" => ['127.0.0.1'],
+      "/ssh" => [
+        '127.0.0.1',
+        ENV['IP_ADDRESS_1'],
+        ENV['IP_ADDRESS_2'],
+        ENV['IP_ADDRESS_3'],
+      ].select(&:present?)
 
       # Examples:
       #
