@@ -2,7 +2,7 @@
 
 ## TODO
 
-- [ ] Enable to specify IP address white list via env var.
+- [x] Enable to specify IP address white list via env var.
 - [ ] Implement `params[:cmd]` white list.
 
 
