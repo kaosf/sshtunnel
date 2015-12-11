@@ -28,24 +28,5 @@ module Sshtunnel
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
-    # IP address filtering
-    # ref. http://tnakamura.hatenablog.com/entry/2013/04/13/092642
-    config.middleware.use Rack::Access, {
-      "/ssh" => [
-        '127.0.0.1',
-        ENV['IP_ADDRESS_1'],
-        ENV['IP_ADDRESS_2'],
-        ENV['IP_ADDRESS_3'],
-      ].select(&:present?)
-
-      # Examples:
-      #
-      # "/ssh" => ['127.0.0.1', '123.456.789.012', ...],
-      # "/items/new" => ['127.0.0.1', '135.792.468.013', ...],
-      # ...
-      #
-      # Add path and IP address pairs to be allowed to access.
-    }
   end
 end
