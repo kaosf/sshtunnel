@@ -51,3 +51,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'puma', '2.16.0'

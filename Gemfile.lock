@@ -97,6 +97,7 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
+    puma (2.16.0)
     rack (1.6.4)
     rack-contrib (1.4.0)
       git-version-bump (~> 0.15)
@@ -182,6 +183,7 @@ DEPENDENCIES
   pry-doc
   pry-rails
   pry-stack_explorer
+  puma (= 2.16.0)
   rack-contrib (= 1.4.0)
   rails (= 4.2.5)
   sass-rails (~> 5.0)
@@ -193,4 +195,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
